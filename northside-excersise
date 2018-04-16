@@ -1,0 +1,32 @@
+CREATE DATABASE northsideerxercise; 
+
+
+CREATE TABLE stage (
+	id INT NOT NULL AUTO_INCREMENT,
+	stagename VARCHAR(60) NOT NULL,
+	capacity INT NOT NULL,
+	PRIMARY KEY(id)
+  );
+	
+	
+CREATE TABLE artist (
+	id INT NOT NULL AUTO_INCREMENT,
+	artistname VARCHAR(60) NOT NULL,
+	country VARCHAR(60) NOT NULL,
+	PRIMARY KEY(id)
+  );
+
+
+
+CREATE TABLE stageartist (
+	id INT NOT NULL AUTO_INCREMENT,
+	day VARCHAR(60) NOT NULL,
+	clock VARCHAR(60) NOT NULL,
+	month VARCHAR(60) NOT NULL,
+	yeaar VARCHAR(60) NOT NULL, 
+	stageid INT NOT NULL, 
+	artistid INT NOT NULL, 
+	PRIMARY KEY(id),
+	FOREIGN KEY (artistid) REFERENCES artist(id),
+	FOREIGN KEY (stageid) REFERENCES stage(id)
+  );
